@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>Sunperky Films</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+
+  <!-- FIXED NAVIGATION -->
+  <div class="nav-buttons">
+    <a href="#" id="bookWithUsBtn" class="glass-btn">Book With Us</a>
+    <a href="#portfolio" id="portfolioBtn" class="glass-btn">Our Portfolio</a>
+  </div>
+
+  <!-- HERO SECTION -->
+  <div class="hero">
+    <img src="artboard2.jpg" alt="Background" class="background" />
+    <div class="overlay">
+      <div class="text-content">
+        <h1 class="company-name">Sunperky Films</h1>
+        <p class="tagline">It’s the moments we capture</p>
+        <div class="gradient-line"></div>
+        <div class="hero-cta-card">
+          <h2>Unlimited movies, TV shows, and more</h2>
+          <a href="#" onclick="openWatchSection()" class="glass-watch-btn">Click to Watch</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CLICK & WATCH SECTION -->
+  <section id="click-watch" class="click-watch-section">
+    <div class="overlay"></div>
+    <div class="watch-container">
+      <span class="close-btn" onclick="closeWatchSection()">&times;</span>
+      <div class="video-player">
+        <iframe id="mainVideo" src="https://drive.google.com/file/d/1kV0haZK3ylQKNggzgBoPgxXQy8jm7PDP/preview" allowfullscreen></iframe>
+      </div>
+      <div class="playlist">
+        <h2>Watch Playlist</h2>
+        <ul>
+          <li onclick="playVideo('https://drive.google.com/file/d/1kV0haZK3ylQKNggzgBoPgxXQy8jm7PDP/preview')">🎬 Feature Film</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- PORTFOLIO SECTION -->
+  <section id="portfolio" class="portfolio-section">
+    <header>
+      <h1>Our Portfolio</h1>
+      <p>Explore our 2025 productions</p>
+    </header>
+
+    <div class="portfolio-grid">
+      <div class="portfolio-item" data-video="gikonyore.mp4">
+        <img src="untitled1.jpg" alt="Gikonyore Experience S1" class="portfolio-thumb">
+        <div class="portfolio-overlay">
+          <h3>Gikonyore Experience S1</h3>
+          <p>Kikuyu Comedy Show</p>
+        </div>
+      </div>
+
+      <div class="portfolio-item" data-video="Slapsofreality.mp4">
+        <img src="untitled3.jpg" alt="Slaps of Reality S1" class="portfolio-thumb">
+        <div class="portfolio-overlay">
+          <h3>Slaps Of Reality</h3>
+          <p>StandUp Special</p>
+        </div>
+      </div>
+
+      <div class="portfolio-item" data-video="Smilescaravan.mp4">
+        <img src="kabugi3.jpg" alt="Smiles Caravan S1" class="portfolio-thumb">
+        <div class="portfolio-overlay">
+          <h3>Smiles Caravan</h3>
+          <p>Comedy Show</p>
+        </div>
+      </div>
+
+      <div class="portfolio-item" data-video="Letmeexplain.mp4">
+        <img src="mulamwa3.jpg" alt="Let Me Explain S1" class="portfolio-thumb">
+        <div class="portfolio-overlay">
+          <h3>Let Me Explain</h3>
+          <p>StandUp Special</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- VIDEO POPUP -->
+  <div id="videoPopup" class="video-popup">
+    <div class="video-popup-content">
+      <span id="closeVideoPopup" class="close-video">&times;</span>
+      <video id="portfolioVideo" controls>
+        <source src="" type="video/mp4">
+        Your browser does not support HTML5 video.
+      </video>
+    </div>
+  </div>
+
+  <!-- BOOKING POPUP -->
+  <div id="bookingPopup" class="booking-popup">
+    <div class="booking-card">
+      <span id="closeBooking" class="close-btn">&times;</span>
+      <header>
+        <h1>Book With Us</h1>
+        <p>Plan your perfect production with Sunperky Films</p>
+      </header>
+
+      <div class="tabs">
+        <button class="tab-btn active" data-tab="type">Production Type</button>
+        <button class="tab-btn" data-tab="budget">Estimate Budget</button>
+        <button class="tab-btn" data-tab="timeline">Production Timeline</button>
+        <button class="tab-btn" data-tab="deliverables">Expected Deliverables</button>
+        <button class="tab-btn" data-tab="contact">Phone Number</button>
+      </div>
+
+      <form id="bookingForm">
+        <div class="tab-content active" id="type">
+          <h2>Choose Your Production Type</h2>
+          <select name="productionTypeDropdown">
+            <option value="">Select Production Type</option>
+            <option value="Commercial">Commercial</option>
+            <option value="Music Video">Music Video</option>
+            <option value="Short Film">Short Film</option>
+            <option value="Documentary">Documentary</option>
+            <option value="Event Coverage">Event Coverage</option>
+          </select>
+          <p>Or type your own:</p>
+          <input type="text" name="productionTypeCustom" placeholder="Enter your production type here" />
+        </div>
+
+        <div class="tab-content" id="budget">
+          <h2>Estimate Your Budget</h2>
+          <select name="budget" required>
+            <option value="">Select Budget Range</option>
+            <option value="<50000">Below KES 50,000</option>
+            <option value="50000-150000">KES 50,000 - 150,000</option>
+            <option value="150000-300000">KES 150,000 - 300,000</option>
+            <option value=">300000">Above KES 300,000</option>
+          </select>
+        </div>
+
+        <div class="tab-content" id="timeline">
+          <h2>Production Timeline</h2>
+          <label>Start Date:</label>
+          <input type="date" name="startDate" required />
+          <label>End Date:</label>
+          <input type="date" name="endDate" required />
+        </div>
+
+        <div class="tab-content" id="deliverables">
+          <h2>Expected Deliverables</h2>
+          <textarea name="deliverables" placeholder="Describe what you expect to receive" rows="5"></textarea>
+        </div>
+
+        <div class="tab-content" id="contact">
+          <h2>Contact Information</h2>
+          <input type="tel" name="phone" placeholder="Enter your phone number" required />
+        </div>
+
+        <div class="submit-container">
+          <button type="submit" class="submit-btn">Submit Booking Request</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-overlay">
+      <div class="footer-content">
+        <h2 class="footer-logo">Sunperky Films</h2>
+        <p class="footer-tagline">Capturing moments that move the world.</p>
+        <div class="footer-contact">
+          <p>Email: <a href="mailto:sunperkyfilms@gmail.com">sunperkyfilms@gmail.com</a></p>
+          <p>Phone: <a href="tel:+254759235117">+254 759 235 117</a></p>
+        </div>
+        <p class="footer-copy">&copy; 2025 Sunperky Films. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="book.js"></script>
+</body>
+</html>

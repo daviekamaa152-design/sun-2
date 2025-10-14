@@ -1,0 +1,336 @@
+/* ========== BASE ========== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body, html {
+  height: 100%;
+  width: 100%;
+  font-family: 'Cinzel Decorative', serif;
+  overflow-x: hidden;
+  background: black;
+  color: white;
+}
+
+/* ========== NAV BUTTONS ========== */
+.nav-buttons {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  display: flex;
+  gap: 15px;
+  z-index: 999;
+  flex-wrap: wrap;
+}
+
+.glass-btn {
+  background: rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: white;
+  padding: 10px 18px;
+  border-radius: 12px;
+  text-decoration: none;
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+}
+.glass-btn:hover {
+  background: rgba(255, 255, 255, 0.25);
+}
+
+/* ========== HERO SECTION ========== */
+.hero {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+.hero img.background {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+}
+.hero .overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.45);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.text-content {
+  color: white;
+}
+.company-name {
+  font-size: 3rem;
+  letter-spacing: 3px;
+  font-weight: 900;
+}
+.tagline {
+  font-size: 1.3rem;
+  margin-bottom: 10px;
+}
+.gradient-line {
+  width: 60%;
+  height: 3px;
+  margin: 10px auto;
+  background: linear-gradient(90deg, gold, orange, red);
+}
+.hero-cta-card {
+  background: rgba(255,255,255,0.1);
+  border-radius: 15px;
+  padding: 25px;
+  margin-top: 20px;
+  backdrop-filter: blur(10px);
+}
+.hero-cta-card h2 {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+.glass-watch-btn {
+  background: rgba(255,255,255,0.15);
+  border: 1px solid rgba(255,255,255,0.25);
+  color: white;
+  padding: 10px 20px;
+  border-radius: 10px;
+  text-decoration: none;
+}
+
+/* ========== PORTFOLIO SECTION ========== */
+.portfolio-section {
+  padding: 100px 40px;
+  text-align: center;
+  background: #0b0b0b;
+}
+.portfolio-section header h1 {
+  font-size: 2.5rem;
+}
+.portfolio-section header p {
+  color: #aaa;
+  margin-bottom: 40px;
+}
+.portfolio-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 25px;
+}
+.portfolio-item {
+  position: relative;
+  border-radius: 15px;
+  overflow: hidden;
+  cursor: pointer;
+}
+.portfolio-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: 0.4s ease;
+}
+.portfolio-item:hover img {
+  transform: scale(1.05);
+}
+.portfolio-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(transparent, rgba(0,0,0,0.7));
+  padding: 15px;
+}
+.portfolio-overlay h3 {
+  font-size: 1.2rem;
+}
+.portfolio-overlay p {
+  font-size: 0.9rem;
+  color: #ddd;
+}
+
+/* ========== VIDEO POPUP ========== */
+.video-popup {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.8);
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+.video-popup-content {
+  width: 90%;
+  max-width: 800px;
+  position: relative;
+}
+.close-video {
+  position: absolute;
+  top: -25px;
+  right: -10px;
+  font-size: 35px;
+  cursor: pointer;
+  color: white;
+}
+.video-popup video {
+  width: 100%;
+  border-radius: 15px;
+}
+
+/* ========== BOOKING POPUP ========== */
+.booking-popup {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.8);
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+.booking-card {
+  background: rgba(255,255,255,0.1);
+  padding: 25px;
+  border-radius: 20px;
+  width: 90%;
+  max-width: 600px;
+  color: white;
+  backdrop-filter: blur(12px);
+}
+.close-btn {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  font-size: 30px;
+  cursor: pointer;
+  color: white;
+}
+.tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  margin-top: 20px;
+}
+.tab-btn {
+  flex: 1;
+  padding: 10px;
+  border: none;
+  color: white;
+  background: rgba(255,255,255,0.1);
+  border-radius: 10px;
+  cursor: pointer;
+}
+.tab-btn.active {
+  background: rgba(255,255,255,0.25);
+}
+.tab-content {
+  display: none;
+  margin-top: 20px;
+}
+.tab-content.active {
+  display: block;
+}
+.submit-container {
+  margin-top: 20px;
+  text-align: center;
+}
+.submit-btn {
+  background: rgba(255,255,255,0.2);
+  border: none;
+  padding: 10px 20px;
+  border-radius: 12px;
+  color: white;
+  cursor: pointer;
+}
+
+/* ========== FOOTER ========== */
+.footer {
+  background: #000;
+  text-align: center;
+  padding: 50px 20px;
+  position: relative;
+}
+.footer-content h2 {
+  font-size: 2rem;
+}
+.footer-tagline {
+  color: #aaa;
+  margin: 10px 0;
+}
+.footer-contact a {
+  color: gold;
+  text-decoration: none;
+}
+.footer-copy {
+  color: #666;
+  font-size: 0.8rem;
+  margin-top: 20px;
+}
+
+/* ========== RESPONSIVE DESIGN ========== */
+
+/* Tablet (≤1024px) */
+@media (max-width: 1024px) {
+  .portfolio-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .company-name {
+    font-size: 2.5rem;
+  }
+  .hero-cta-card {
+    padding: 20px;
+  }
+}
+
+/* Mobile (≤768px) */
+@media (max-width: 768px) {
+  .nav-buttons {
+    top: 10px;
+    right: 10px;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .company-name {
+    font-size: 2rem;
+  }
+  .tagline {
+    font-size: 1rem;
+  }
+  .hero-cta-card h2 {
+    font-size: 1rem;
+  }
+  .portfolio-grid {
+    grid-template-columns: 1fr;
+  }
+  .portfolio-section {
+    padding: 60px 20px;
+  }
+  .booking-card {
+    width: 95%;
+    padding: 20px;
+  }
+  .tab-btn {
+    font-size: 0.85rem;
+  }
+  .footer-content h2 {
+    font-size: 1.5rem;
+  }
+}
+
+/* Very small screens (≤480px) */
+@media (max-width: 480px) {
+  .company-name {
+    font-size: 1.7rem;
+  }
+  .tagline {
+    font-size: 0.9rem;
+  }
+  .hero-cta-card {
+    padding: 15px;
+  }
+  .glass-btn {
+    padding: 8px 14px;
+    font-size: 0.85rem;
+  }
+  .footer-content h2 {
+    font-size: 1.3rem;
+  }
+}
