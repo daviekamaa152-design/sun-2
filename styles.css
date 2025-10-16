@@ -697,7 +697,7 @@ h1, h2 {
   transform: scale(1.2);
 }
 body.mobile-view .hero {
-  height: 80vh;
+  height: 60vh;
   background-position: center;
 }
 
@@ -726,95 +726,3 @@ body.desktop-view .portfolio-grid {
 }
 
 @media (max
-/* === DEVICE-AWARE LAYOUT CONTROL === */
-body.mobile-view .hero {
-  height: 80vh;
-  background-position: center;
-}
-
-body.mobile-view .company-name {
-  font-size: 2rem;
-}
-
-body.tablet-view .company-name {
-  font-size: 3rem;
-}
-
-body.desktop-view .company-name {
-  font-size: 4rem;
-}
-
-body.mobile-view .portfolio-grid {
-  grid-template-columns: 1fr;
-}
-
-body.tablet-view .portfolio-grid {
-  grid-template-columns: repeat(2, 1fr);
-}
-
-body.desktop-view .portfolio-grid {
-  grid-template-columns: repeat(3, 1fr);
-}
-
-/* === HERO AUTO-RESPONSIVE CONTROL === */
-.hero {
-  position: relative;
-  width: 100%;
-  height: 100vh; /* full screen by default */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  text-align: center;
-  overflow: hidden;
-}
-
-.hero .background {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center;
-  z-index: 0;
-}
-
-.hero .overlay {
-  position: relative;
-  z-index: 2;
-  padding: 0 1rem;
-  background: rgba(0, 0, 0, 0.3);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-
-.company-name {
-  font-size: clamp(1.8rem, 6vw, 4rem);
-  background: linear-gradient(90deg, #FFD700, #FF8C00);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  letter-spacing: 4px;
-  margin-bottom: 0.5rem;
-}
-
-.tagline {
-  font-size: clamp(1rem, 3vw, 1.5rem);
-  color: #fff;
-  margin-top: 0.5rem;
-  max-width: 90%;
-}
-
-@media (max-width: 768px) {
-  .hero {
-    height: 80vh;
-  }
-}
-
-@media (max-width: 480px) {
-  .hero {
-    height: 75vh;
-  }
-}
