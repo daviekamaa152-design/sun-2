@@ -17,8 +17,7 @@ h1, h2 {
 }
 
 /* === FIXED NAVIGATION === */
-.nav-buttons {
-  position: fixed;
+.nav-buttons {position: fixed;
   top: 2rem;
   right: 2rem;
   display: flex;
