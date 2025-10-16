@@ -111,7 +111,7 @@ h1, h2 {
 /* CTA Card */
 .hero-cta-card {
   width: 95%;
-  max-width: 1400px;
+  max-width:800px;
   margin: 16rem auto 0;
   padding: 2rem 3rem;
   border-radius: 20px;
