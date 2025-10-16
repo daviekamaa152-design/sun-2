@@ -50,6 +50,7 @@ h1, h2 {
   position: relative;
   height: 100vh;
   width: 100%;
+  overflow: hidden;
 }
 
 .background {
@@ -73,26 +74,60 @@ h1, h2 {
 
 .hero-text {
   position: absolute;
-  top: 20%;
+  top: 25%;
   left: 50%;
   transform: translateX(-50%);
   text-align: center;
   z-index: 10;
+  padding: 0 1rem;
+  width: 90%;
 }
 
 .company-name {
-  font-size: 4rem;
+  font-size: clamp(2rem, 6vw, 4rem);
   background: linear-gradient(90deg, #FFD700, #FF8C00);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  letter-spacing: 6px;
+  letter-spacing: 4px;
+  line-height: 1.1;
 }
 
 .tagline {
-  font-size: 1.5rem;
-  margin-top: 0.5rem;
+  font-size: clamp(1rem, 3vw, 1.5rem);
+  margin-top: 0.75rem;
   color: #fff;
 }
+
+/* Responsive tweaks */
+@media (max-width: 768px) {
+  .hero-text {
+    top: 30%;
+  }
+
+  .company-name {
+    letter-spacing: 2px;
+  }
+
+  .tagline {
+    max-width: 90%;
+    margin: 0.5rem auto 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-text {
+    top: 35%;
+  }
+
+  .company-name {
+    font-size: clamp(1.8rem, 8vw, 3rem);
+  }
+
+  .tagline {
+    font-size: 1rem;
+  }
+}
+
 
 /* CTA Card */
 .hero-cta-card {
