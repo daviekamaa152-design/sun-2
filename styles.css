@@ -685,3 +685,196 @@ h1, h2 {
 
 
 @media (max
+        /* === GLOBAL RESPONSIVE FIXES === */
+@media (max-width: 1024px) {
+  .hero-text .company-name {
+    font-size: 3rem;
+  }
+  .hero-text .tagline {
+    font-size: 1.3rem;
+  }
+  .hero-cta-card {
+    max-width: 90%;
+    margin-top: 12rem;
+  }
+  .portfolio-grid {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+  }
+  .watch-container {
+    flex-direction: column;
+    height: auto;
+    padding: 20px;
+  }
+  .video-section, .playlist {
+    width: 100%;
+    margin: 0;
+  }
+  .playlist {
+    margin-top: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  /* NAVIGATION */
+  .nav-buttons {
+    top: 1rem;
+    right: 1rem;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+  }
+  .glass-btn {
+    padding: 8px 14px;
+    font-size: 0.9rem;
+  }
+
+  /* HERO */
+  .hero {
+    height: 100vh;
+  }
+  .hero-text {
+    top: 25%;
+  }
+  .company-name {
+    font-size: 2.5rem;
+    letter-spacing: 3px;
+  }
+  .tagline {
+    font-size: 1.1rem;
+  }
+  .hero-cta-card {
+    margin-top: 8rem;
+    padding: 1.5rem 1.5rem;
+  }
+  .hero-cta-card h2 {
+    font-size: 1.5rem;
+  }
+
+  /* PORTFOLIO */
+  .portfolio-section {
+    padding: 4rem 1.5rem;
+  }
+  .portfolio-section header h1 {
+    font-size: 2rem;
+  }
+  .portfolio-section header p {
+    font-size: 1rem;
+  }
+  .portfolio-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  /* VIDEO POPUP */
+  .video-popup-content {
+    width: 95%;
+  }
+
+  /* BOOKING */
+  .booking-card {
+    width: 95%;
+    padding: 1.5rem;
+  }
+  .tab-btn {
+    font-size: 0.85rem;
+    padding: 0.5rem 0.9rem;
+  }
+  .tab-content input,
+  .tab-content select,
+  .tab-content textarea {
+    width: 100%;
+    max-width: none;
+  }
+
+  /* WATCH SECTION */
+  .watch-container {
+    flex-direction: column;
+    padding: 20px;
+    height: auto;
+  }
+  .video-section {
+    width: 100%;
+  }
+  .playlist {
+    width: 100%;
+    margin: 15px 0 0;
+    max-height: 250px;
+  }
+  .video-player {
+    height: 250px;
+  }
+
+  /* FOOTER */
+  .footer-overlay {
+    width: 95%;
+    padding: 2rem 1.5rem;
+  }
+  .footer-logo {
+    font-size: 1.8rem;
+  }
+  .footer-tagline {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  /* HERO SMALL PHONES */
+  .company-name {
+    font-size: 1.8rem;
+    letter-spacing: 2px;
+  }
+  .tagline {
+    font-size: 0.9rem;
+  }
+  .hero-cta-card {
+    margin-top: 6rem;
+    padding: 1rem;
+  }
+  .hero-cta-card h2 {
+    font-size: 1.2rem;
+  }
+  .hero-cta-card .glass-watch-btn {
+    padding: 0.8rem 1.5rem;
+    font-size: 0.9rem;
+  }
+
+  /* PORTFOLIO SMALL PHONES */
+  .portfolio-overlay h3 {
+    font-size: 1rem;
+  }
+  .portfolio-overlay p {
+    font-size: 0.8rem;
+  }
+
+  /* BOOKING */
+  .booking-card {
+    padding: 1rem;
+  }
+  .tab-btn {
+    padding: 0.4rem 0.8rem;
+    font-size: 0.8rem;
+  }
+  .submit-btn {
+    font-size: 1rem;
+    padding: 0.8rem 1.5rem;
+  }
+
+  /* VIDEO PLAYER */
+  .video-player {
+    height: 220px;
+  }
+
+  /* FOOTER SMALL PHONES */
+  .footer-logo {
+    font-size: 1.6rem;
+  }
+  .footer-tagline {
+    font-size: 0.9rem;
+  }
+  .footer-contact p {
+    font-size: 0.85rem;
+  }
+}
+
