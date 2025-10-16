@@ -19,7 +19,7 @@ h1, h2 {
 /* === FIXED NAVIGATION === */
 .nav-buttons {
   position: fixed;
-  top: 14rem;
+  top: 2rem;
   right: 2rem;
   display: flex;
   flex-direction: column;
@@ -73,7 +73,7 @@ h1, h2 {
 
 .hero-text {
   position: absolute;
-  top: 20%;
+  top: 30%;
   left: 50%;
   transform: translateX(-50%);
   text-align: center;
@@ -81,7 +81,7 @@ h1, h2 {
 }
 
 .company-name {
-  font-size: 4rem;
+  font-size: 3rem;
   background: linear-gradient(90deg, #FFD700, #FF8C00);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
