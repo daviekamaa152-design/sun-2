@@ -697,12 +697,12 @@ h1, h2 {
   transform: scale(1.2);
 }
 body.mobile-view .hero {
-  height: 60vh;
+  height: 80vh;
   background-position: center;
 }
 
 body.mobile-view .company-name {
-  font-size: 1rem;
+  font-size: 2rem;
 }
 
 body.tablet-view .company-name {
