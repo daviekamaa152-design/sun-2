@@ -114,21 +114,6 @@ h1, h2 {
   }
 }
 
-@media (max-width: 480px) {
-  .hero-text {
-    top: 35%;
-  }
-
-  .company-name {
-    font-size: clamp(1.8rem, 8vw, 3rem);
-  }
-
-  .tagline {
-    font-size: 1rem;
-  }
-}
-
-
 /* CTA Card */
 .hero-cta-card {
   width: 95%;
