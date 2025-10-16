@@ -410,8 +410,31 @@ function playVideo(url) {
   </footer>
 
   <script src="book.js"></script>
+  <script>
+function adjustLayout() {
+  const width = window.innerWidth;
+  const body = document.body;
+
+  // Remove any old classes first
+  body.classList.remove('mobile-view', 'tablet-view', 'desktop-view');
+
+  if (width <= 600) {
+    body.classList.add('mobile-view');
+  } else if (width > 600 && width <= 1024) {
+    body.classList.add('tablet-view');
+  } else {
+    body.classList.add('desktop-view');
+  }
+}
+
+// Run on load and resize
+window.addEventListener('load', adjustLayout);
+window.addEventListener('resize', adjustLayout);
+</script>
+
 </body>
 </html>
+
 
 
 
