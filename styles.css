@@ -93,13 +93,13 @@ h1, h2 {
   color: #fff;
 }
 /* Responsive tweaks */
-@media (max-width: 768px) {
+@media (max-width: 600px) {
   .hero-text {
     top: 30%;
   }
 
   .company-name {
-    letter-spacing: 2px;
+    letter-spacing: 1px;
   }
 
   .tagline {
