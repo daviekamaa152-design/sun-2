@@ -2,12 +2,11 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Sunperky Films</title>
   <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
 </head>
-
 <body>
 
   <!-- FIXED NAVIGATION -->
@@ -17,100 +16,309 @@
   </div>
 
   <!-- HERO SECTION -->
-  <div class="hero">
-    <img src="artboard2.jpg" alt="Background" class="background" />
-    <div class="overlay">
-      <div class="text-content">
-        <h1 class="company-name">Sunperky Films</h1>
-        <p class="tagline">It’s the moments we capture</p>
-        <div class="gradient-line"></div>
-        <div class="hero-cta-card">
-          <h2>Unlimited movies, TV shows, and more</h2>
-          <a href="#" onclick="openWatchSection()" class="glass-watch-btn">Click to Watch</a>
-        </div>
+<div class="hero">
+  <img src="artboard2.jpg" alt="Background" class="background" />
+
+  <div class="overlay">
+    <div class="text-content">
+      <h1 class="company-name">Sunperky Films</h1>
+      <p class="tagline">It’s the moments we capture</p>
+
+      <!-- Curved Gradient Line -->
+      <div class="gradient-line"></div>
+
+      <!-- Rounded Card CTA -->
+      <div class="hero-cta-card">
+        <h2>Unlimited movies, TV shows, and more</h2>
+        <!-- Changed to trigger overlay instead of opening in new tab -->
+        <a href="#" onclick="openWatchSection()" class="glass-watch-btn">Click to Watch</a>
       </div>
     </div>
   </div>
+</div>
 
-  <!-- CLICK & WATCH SECTION -->
-  <section id="click-watch" class="click-watch-section">
-    <div class="overlay"></div>
-    <div class="watch-container">
-      <span class="close-btn" onclick="closeWatchSection()">&times;</span>
-      <div class="video-player">
-        <iframe id="mainVideo" src="https://drive.google.com/file/d/1kV0haZK3ylQKNggzgBoPgxXQy8jm7PDP/preview" allowfullscreen></iframe>
-      </div>
-      <div class="playlist">
-        <h2>Watch Playlist</h2>
-        <ul>
-          <li onclick="playVideo('https://drive.google.com/file/d/1kV0haZK3ylQKNggzgBoPgxXQy8jm7PDP/preview')">🎬 Feature Film</li>
-        </ul>
-      </div>
+<!-- 🎥 CLICK & WATCH SECTION -->
+<section id="click-watch" class="click-watch-section">
+  <div class="overlay"></div>
+  <div class="watch-container">
+    <!-- ✖️ Close Button -->
+    <span class="close-btn" onclick="closeWatchSection()">&times;</span>
+
+    <!-- 🎬 Main Video Player -->
+    <div class="video-player">
+      <iframe
+        id="mainVideo"
+        src="https://drive.google.com/file/d/1kV0haZK3ylQKNggzgBoPgxXQy8jm7PDP/preview"
+        frameborder="0"
+        allowfullscreen
+      ></iframe>
     </div>
-  </section>
 
-  <!-- PORTFOLIO SECTION -->
-  <section id="portfolio" class="portfolio-section">
-    <header>
-      <h1>Our Portfolio</h1>
-      <p>Explore our 2025 productions</p>
-    </header>
-
-    <div class="portfolio-grid">
-      <div class="portfolio-item" data-video="gikonyore.mp4">
-        <img src="untitled1.jpg" alt="Gikonyore Experience S1" class="portfolio-thumb">
-        <div class="portfolio-overlay">
-          <h3>Gikonyore Experience S1</h3>
-          <p>Kikuyu Comedy Show</p>
-        </div>
-      </div>
-
-      <div class="portfolio-item" data-video="Slapsofreality.mp4">
-        <img src="untitled3.jpg" alt="Slaps of Reality S1" class="portfolio-thumb">
-        <div class="portfolio-overlay">
-          <h3>Slaps Of Reality</h3>
-          <p>StandUp Special</p>
-        </div>
-      </div>
-
-      <div class="portfolio-item" data-video="Smilescaravan.mp4">
-        <img src="kabugi3.jpg" alt="Smiles Caravan S1" class="portfolio-thumb">
-        <div class="portfolio-overlay">
-          <h3>Smiles Caravan</h3>
-          <p>Comedy Show</p>
-        </div>
-      </div>
-
-      <div class="portfolio-item" data-video="Letmeexplain.mp4">
-        <img src="mulamwa3.jpg" alt="Let Me Explain S1" class="portfolio-thumb">
-        <div class="portfolio-overlay">
-          <h3>Let Me Explain</h3>
-          <p>StandUp Special</p>
-        </div>
-      </div>
-
-       <div class="portfolio-item" data-video="Whatittakes.mp4">
-        <img src="yy.jpg" alt="What it Takes" class="portfolio-thumb">
-        <div class="portfolio-overlay">
-          <h3>What it Takes</h3>
-          <p>StandUp Special</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- VIDEO POPUP -->
-  <div id="videoPopup" class="video-popup">
-    <div class="video-popup-content">
-      <span id="closeVideoPopup" class="close-video">&times;</span>
-      <video id="portfolioVideo" controls>
-        <source src="" type="video/mp4">
-        Your browser does not support HTML5 video.
-      </video>
+    <!-- 📜 Playlist -->
+    <div class="playlist">
+      <h2>Watch Playlist</h2>
+      <ul>
+        <li onclick="playVideo('https://drive.google.com/file/d/1kV0haZK3ylQKNggzgBoPgxXQy8jm7PDP/preview')">
+          🎬 Feature Film
+      
+        </li>
+      </ul>
     </div>
   </div>
+</section>
 
-  <!-- BOOKING POPUP -->
+<!-- ✨ STYLES -->
+<style>
+/* --- HERO SECTION --- */
+.hero {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.hero .background {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.hero .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.3);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.text-content {
+  text-align: center;
+  color: white;
+  font-family: 'Cinzel Decorative', serif;
+}
+
+.company-name {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.tagline {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+  color: #FFFFFF;
+}
+
+.gradient-line {
+  width: 1200px;
+  height: 1px;
+  background: linear-gradient(90deg, gold, #ffcc00);
+  border-radius: 10px;
+  margin: 20px auto;
+}
+
+/* Rounded Card CTA */
+.hero-cta-card {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 25px;
+  padding: 40px;
+  text-align: center;
+  color: white;
+  backdrop-filter: blur(8px);
+  box-shadow: 0 0 20px rgba(255, 215, 0, 0.2);
+  max-width: 900px;
+  margin: 70 auto;
+}
+
+.glass-watch-btn {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 12px 28px;
+  background: linear-gradient(90deg, gold, #ffcc00);
+  color: black;
+  font-weight: bold;
+  border-radius: 25px;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.glass-watch-btn:hover {
+  background: linear-gradient(90deg, #ffcc00, gold);
+  transform: scale(1.05);
+}
+
+<!-- 🎬 CLICK & WATCH SECTION -->
+<style>
+/* --- CLICK & WATCH OVERLAY --- */
+.click-watch-section {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.7);
+  z-index: 1000;
+  overflow: hidden;
+}
+
+.click-watch-section.active {
+  display: flex;
+  animation: fadeIn 0.6s ease-in-out forwards;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(1.05); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+/* --- MAIN WATCH CARD --- */
+.watch-container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 85%;
+  height: 75%;
+  border-radius: 10px;
+  overflow: hidden;
+  background: url('artboard2.jpg') center/cover no-repeat;
+  box-shadow: 0 0 35px rgba(255, 215, 0, 0.25);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(10px);
+  animation: cardPop 0.5s ease;
+}
+
+@keyframes cardPop {
+  from { transform: scale(0.97); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+/* --- VIDEO AREA --- */
+.video-player {
+  width: 65%;
+  height: 85%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.video-player iframe {
+  width: 98%;
+  height: 95%;
+  border: none;
+  border-radius: 13px;
+  box-shadow: 0 0 30px rgba(255, 215, 0, 0.15);
+}
+
+/* --- CLOSE BUTTON --- */
+.close-btn {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  font-size: 40px;
+  color: white;
+  cursor: pointer;
+  z-index: 10;
+  transition: transform 0.2s ease;
+}
+
+.close-btn:hover {
+  transform: scale(1.1);
+  color: gold;
+}
+</style>
+
+<!-- ⚙️ HTML STRUCTURE -->
+<div id="click-watch" class="click-watch-section">
+  <div class="watch-container">
+    <span class="close-btn" onclick="closeWatchSection()">&times;</span>
+    <div class="video-player">
+      <iframe id="mainVideo" src="" allowfullscreen></iframe>
+    </div>
+  </div>
+</div>
+
+<!-- ⚙️ SCRIPT -->
+<script>
+function openWatchSection() {
+  document.getElementById("click-watch").classList.add("active");
+}
+
+function closeWatchSection() {
+  document.getElementById("click-watch").classList.remove("active");
+  document.getElementById("mainVideo").src = "";
+}
+
+function playVideo(url) {
+  document.getElementById("mainVideo").src = url;
+}
+</script>
+
+
+  <!-- === PORTFOLIO SECTION === -->
+<section id="portfolio" class="portfolio-section">
+  <header>
+    <h1>Our Portfolio</h1>
+    <p>Explore our 2025 productions</p>
+  </header>
+
+  <div class="portfolio-grid">
+    <!-- Gikonyore Experience Thumbnail -->
+    <div class="portfolio-item" data-video="gikonyore.mp4">
+      <img src="untitled1.jpg" alt="Gikonyore Experience S1" class="portfolio-thumb">
+      <div class="portfolio-overlay">
+        <h3>Gikonyore Experience S1</h3>
+        <p>Kikuyu Comedy Show</p>
+      </div>
+    </div>
+
+    <!-- Add More Items Below -->
+    <div class="portfolio-item" data-video="Slapsofreality.mp4">
+      <img src="untitled3.jpg" alt="Slaps of Reality S1" class="portfolio-thumb">
+      <div class="portfolio-overlay">
+        <h3>Slaps Of Reality</h3>
+        <p>StandUp Special</p>
+      </div>
+    </div>
+
+    <div class="portfolio-item" data-video="Smilescaravan.mp4">
+      <img src="kabugi3.jpg" alt="Smiles Caravan S1" class="portfolio-thumb">
+      <div class="portfolio-overlay">
+        <h3>Smiles Caravan</h3>
+        <p>Comedy Show</p>
+      </div>
+    </div>
+
+    <div class="portfolio-item" data-video="Letmeexplain.mp4">
+    <img src="mulamwa1" alt="Let Me Explain S1" class="portfolio-thumb">
+    <div class="portfolio-overlay">
+      <h3>Let Me Explain</h3>
+      <p>StandUp Special</p>
+    </div>
+  </div>
+  </div>
+</section>
+
+<!-- === VIDEO POPUP OVERLAY === -->
+<div id="videoPopup" class="video-popup">
+  <div class="video-popup-content">
+    <span id="closeVideoPopup" class="close-video">&times;</span>
+    <video id="portfolioVideo" controls>
+      <source src="" type="video/mp4">
+      Your browser does not support HTML5 video.
+    </video>
+  </div>
+</div>
+
+
+  <!-- POPUP BOOKING FORM -->
   <div id="bookingPopup" class="booking-popup">
     <div class="booking-card">
       <span id="closeBooking" class="close-btn">&times;</span>
@@ -196,5 +404,3 @@
   <script src="book.js"></script>
 </body>
 </html>
-
-
