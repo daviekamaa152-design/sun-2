@@ -50,6 +50,7 @@ h1, h2 {
   position: relative;
   height: 100vh;
   width: 100%;
+  overflow: hidden;
 }
 
 .background {
@@ -73,25 +74,57 @@ h1, h2 {
 
 .hero-text {
   position: absolute;
-  top: 20%;
+  top: 25%;
   left: 50%;
   transform: translateX(-50%);
   text-align: center;
   z-index: 10;
+  padding: 0 1rem;
+  width: 90%;
 }
 
 .company-name {
-  font-size: 4rem;
+  font-size: clamp(2rem, 6vw, 4rem);
   background: linear-gradient(90deg, #FFD700, #FF8C00);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  letter-spacing: 6px;
+  letter-spacing: 4px;
+  line-height: 1.1;
 }
 
 .tagline {
-  font-size: 1.5rem;
-  margin-top: 0.5rem;
+  font-size: clamp(1rem, 3vw, 1.5rem);
+  margin-top: 0.75rem;
   color: #fff;
+}
+
+@media (max-width: 768px) {
+  .hero-text {
+    top: 30%;
+  }
+
+  .company-name {
+    letter-spacing: 2px;
+  }
+
+  .tagline {
+    max-width: 90%;
+    margin: 0.5rem auto 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-text {
+    top: 35%;
+  }
+
+  .company-name {
+    font-size: clamp(1.8rem, 8vw, 3rem);
+  }
+
+  .tagline {
+    font-size: 1rem;
+  }
 }
 
 /* CTA Card */
@@ -138,14 +171,15 @@ h1, h2 {
   transform: scale(1.05);
 }
 
-/* Responsive */
 @media (max-width: 768px) {
   .hero-cta-card {
     width: 90%;
-    padding: 0.5rem 2rem;
+    padding: 1.5rem 1rem;
+    margin-top: 12rem;
   }
+
   .hero-cta-card h2 {
-    font-size: 2rem;
+    font-size: 1.5rem;
   }
 }
 
@@ -299,14 +333,6 @@ h1, h2 {
   padding: 3rem 1rem;
   overflow: hidden;
 }
-..booking-card::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: url('artboard2.jpg') center/cover no-repeat;
-  filter: blur(10px) brightness(0.6);
-  z-index: 0;
-}
 
 .booking-card {
   position: relative;
@@ -321,6 +347,15 @@ h1, h2 {
   padding: 2rem 3rem;
   text-align: center;
   color: #fff;
+}
+
+.booking-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: url('artboard2.jpg') center/cover no-repeat;
+  filter: blur(10px) brightness(0.6);
+  z-index: 0;
 }
 
 /* Tabs */
@@ -391,7 +426,6 @@ h1, h2 {
   box-shadow: 0 0 20px rgba(255, 215, 0, 0.6);
 }
 
-/* Responsive */
 @media (max-width: 768px) {
   .booking-card {
     padding: 2rem 1rem;
@@ -400,45 +434,6 @@ h1, h2 {
     font-size: 0.9rem;
     padding: 0.5rem 1rem;
   }
-}
-
-/* === BOOKING POPUP === */
-.booking-popup {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(10, 10, 10, 0.85);
-  backdrop-filter: blur(6px);
-  display: none;
-  align-items: center;
-  justify-content: center;
-  z-index: 2000;
-  transition: opacity 0.4s ease;
-}
-
-.booking-popup.active {
-  display: flex;
-  opacity: 0;
-}
-
-.booking-popup.visible {
-  opacity: 1;
-}
-
-.booking-card::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: url('artboard2.jpg') center/cover no-repeat;
-  filter: blur(10px) brightness(0.6);
-  z-index: 0;
-}
-
-.booking-card * {
-  position: relative;
-  z-index: 1;
 }
 
 /* === FOOTER === */
@@ -509,7 +504,6 @@ h1, h2 {
   letter-spacing: 0.5px;
 }
 
-/* Responsive */
 @media (max-width: 768px) {
   .footer-overlay {
     width: 95%;
@@ -519,362 +513,3 @@ h1, h2 {
     font-size: 1.8rem;
   }
 }
-
-/* === CLICK & WATCH SECTION === */
-.click-watch-section {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  display: none;
-  justify-content: center;
-  align-items: center;
-  background: url('artboard2.jpg') center/cover no-repeat;
-  z-index: 3000;
-  overflow: hidden;
-}
-
-.click-watch-section.active {
-  display: flex;
-  animation: fadeIn 0.6s ease-in-out forwards;
-}
-
-@keyframes fadeIn {
-  from { opacity: 0; transform: scale(1.05); }
-  to { opacity: 1; transform: scale(1); }
-}
-
-/* Overlay to add cinematic darkness */
-.click-watch-section::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.6);
-  z-index: 1;
-}
-
-/* === CONTAINER === */
-.watch-container {
-  position: relative;
-  width: 85%;
-  height: 80%;
-  display: flex;
-  z-index: 2;
-  border-radius: 20px;
-  border: 1px solid rgba(255, 215, 0, 0.3);
-  background: rgba(20, 20, 20, 0.5);
-  backdrop-filter: blur(18px);
-  box-shadow: 0 0 60px rgba(255, 215, 0, 0.25);
-  overflow: hidden;
-  padding: 30px;
-  transition: all 0.4s ease;
-}
-
-.watch-container:hover {
-  box-shadow: 0 0 80px rgba(255, 215, 0, 0.35);
-}
-
-/* === LEFT: VIDEO AREA === */
-.video-section {
-  flex: 1.7;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-
-.video-player {
-  width: 90%;
-  height: 65%;
-  border-radius: 18px;
-  overflow: hidden;
-  background: rgba(0, 0, 0, 0.6);
-  border: 1px solid rgba(255, 215, 0, 0.3);
-  box-shadow: 0 0 25px rgba(255, 215, 0, 0.2);
-  transition: all 0.3s ease;
-}
-
-.video-player:hover {
-  box-shadow: 0 0 35px rgba(255, 215, 0, 0.3);
-  transform: scale(1.01);
-}
-
-.video-player iframe {
-  width: 100%;
-  height: 100%;
-  border: none;
-  border-radius: 18px;
-}
-
-/* Small description under video */
-.video-description {
-  margin-top: 15px;
-  width: 90%;
-  text-align: center;
-  font-family: 'Cinzel Decorative', serif;
-  font-size: 1rem;
-  line-height: 1.4;
-  color: #fff;
-  background: rgba(0, 0, 0, 0.5);
-  border: 1px solid rgba(255, 215, 0, 0.25);
-  border-radius: 12px;
-  padding: 10px 15px;
-  box-shadow: 0 0 15px rgba(255, 215, 0, 0.15);
-}
-
-/* === RIGHT: PLAYLIST === */
-.playlist {
-  flex: 1;
-  background: rgba(0, 0, 0, 0.45);
-  border-radius: 16px;
-  margin-left: 25px;
-  padding: 25px;
-  color: #fff;
-  border: 1px solid rgba(255, 215, 0, 0.25);
-  backdrop-filter: blur(12px);
-  overflow-y: auto;
-}
-
-.playlist h2 {
-  text-align: center;
-  font-family: 'Cinzel Decorative', serif;
-  color: gold;
-  margin-bottom: 15px;
-  letter-spacing: 1px;
-}
-
-.playlist ul {
-  list-style: none;
-  padding: 0;
-}
-
-.playlist li {
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 8px;
-  padding: 10px;
-  margin: 8px 0;
-  transition: all 0.3s ease;
-  cursor: pointer;
-}
-
-.playlist li:hover {
-  background: rgba(255, 215, 0, 0.25);
-  color: gold;
-  transform: scale(1.03);
-}
-
-/* === CLOSE BUTTON === */
-.click-watch-close {
-  position: absolute;
-  top: 20px;
-  right: 30px;
-  font-size: 2rem;
-  color: gold;
-  cursor: pointer;
-  z-index: 10;
-  transition: 0.3s;
-}
-
-.click-watch-close:hover {
-  color: white;
-  transform: scale(1.2);
-}
-
-
-
-@media (max
-        /* === GLOBAL RESPONSIVE FIXES === */
-@media (max-width: 1024px) {
-  .hero-text .company-name {
-    font-size: 3rem;
-  }
-  .hero-text .tagline {
-    font-size: 1.3rem;
-  }
-  .hero-cta-card {
-    max-width: 90%;
-    margin-top: 12rem;
-  }
-  .portfolio-grid {
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 1.5rem;
-  }
-  .watch-container {
-    flex-direction: column;
-    height: auto;
-    padding: 20px;
-  }
-  .video-section, .playlist {
-    width: 100%;
-    margin: 0;
-  }
-  .playlist {
-    margin-top: 20px;
-  }
-}
-
-@media (max-width: 768px) {
-  /* NAVIGATION */
-  .nav-buttons {
-    top: 1rem;
-    right: 1rem;
-    flex-direction: row;
-    flex-wrap: wrap;
-    gap: 10px;
-    justify-content: center;
-  }
-  .glass-btn {
-    padding: 8px 14px;
-    font-size: 0.9rem;
-  }
-
-  /* HERO */
-  .hero {
-    height: 100vh;
-  }
-  .hero-text {
-    top: 25%;
-  }
-  .company-name {
-    font-size: 2.5rem;
-    letter-spacing: 3px;
-  }
-  .tagline {
-    font-size: 1.1rem;
-  }
-  .hero-cta-card {
-    margin-top: 8rem;
-    padding: 1.5rem 1.5rem;
-  }
-  .hero-cta-card h2 {
-    font-size: 1.5rem;
-  }
-
-  /* PORTFOLIO */
-  .portfolio-section {
-    padding: 4rem 1.5rem;
-  }
-  .portfolio-section header h1 {
-    font-size: 2rem;
-  }
-  .portfolio-section header p {
-    font-size: 1rem;
-  }
-  .portfolio-grid {
-    grid-template-columns: 1fr;
-    gap: 1.5rem;
-  }
-
-  /* VIDEO POPUP */
-  .video-popup-content {
-    width: 95%;
-  }
-
-  /* BOOKING */
-  .booking-card {
-    width: 95%;
-    padding: 1.5rem;
-  }
-  .tab-btn {
-    font-size: 0.85rem;
-    padding: 0.5rem 0.9rem;
-  }
-  .tab-content input,
-  .tab-content select,
-  .tab-content textarea {
-    width: 100%;
-    max-width: none;
-  }
-
-  /* WATCH SECTION */
-  .watch-container {
-    flex-direction: column;
-    padding: 20px;
-    height: auto;
-  }
-  .video-section {
-    width: 100%;
-  }
-  .playlist {
-    width: 100%;
-    margin: 15px 0 0;
-    max-height: 250px;
-  }
-  .video-player {
-    height: 250px;
-  }
-
-  /* FOOTER */
-  .footer-overlay {
-    width: 95%;
-    padding: 2rem 1.5rem;
-  }
-  .footer-logo {
-    font-size: 1.8rem;
-  }
-  .footer-tagline {
-    font-size: 1rem;
-  }
-}
-
-@media (max-width: 480px) {
-  /* HERO SMALL PHONES */
-  .company-name {
-    font-size: 1.8rem;
-    letter-spacing: 2px;
-  }
-  .tagline {
-    font-size: 0.9rem;
-  }
-  .hero-cta-card {
-    margin-top: 6rem;
-    padding: 1rem;
-  }
-  .hero-cta-card h2 {
-    font-size: 1.2rem;
-  }
-  .hero-cta-card .glass-watch-btn {
-    padding: 0.8rem 1.5rem;
-    font-size: 0.9rem;
-  }
-
-  /* PORTFOLIO SMALL PHONES */
-  .portfolio-overlay h3 {
-    font-size: 1rem;
-  }
-  .portfolio-overlay p {
-    font-size: 0.8rem;
-  }
-
-  /* BOOKING */
-  .booking-card {
-    padding: 1rem;
-  }
-  .tab-btn {
-    padding: 0.4rem 0.8rem;
-    font-size: 0.8rem;
-  }
-  .submit-btn {
-    font-size: 1rem;
-    padding: 0.8rem 1.5rem;
-  }
-
-  /* VIDEO PLAYER */
-  .video-player {
-    height: 220px;
-  }
-
-  /* FOOTER SMALL PHONES */
-  .footer-logo {
-    font-size: 1.6rem;
-  }
-  .footer-tagline {
-    font-size: 0.9rem;
-  }
-  .footer-contact p {
-    font-size: 0.85rem;
-  }
-}
-
