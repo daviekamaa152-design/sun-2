@@ -696,7 +696,7 @@ h1, h2 {
   transform: scale(1.2);
 }
 body.mobile-view .hero {
-  height: 80vh;
+  height: 70vh;
   background-position: center;
 }
 
