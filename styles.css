@@ -701,19 +701,19 @@ body.mobile-view .hero {
 }
 
 body.mobile-view .company-name {
-  font-size: 2rem;
+  font-size: 1rem;
 }
 
 body.tablet-view .company-name {
-  font-size: 2rem;
+  font-size: 1rem;
 }
 
 body.desktop-view .company-name {
-  font-size: 3rem;
+  font-size: 2rem;
 }
 
 body.mobile-view .portfolio-grid {
-  grid-template-columns: 1fr;
+  grid-template-columns: 0.5fr;
 }
 
 body.tablet-view .portfolio-grid {
