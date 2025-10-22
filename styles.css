@@ -106,37 +106,62 @@ h1, h2 {
     max-width: 90%;
     margin: 0.5rem auto 0;
   }
+}
 
-/* Watch button */
+/* CTA Card */
+.hero-cta-card {
+  width: 95%;
+  max-width:800px;
+  margin: 16rem auto 0;
+  padding: 2rem 3rem;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(12px);
+  box-shadow: 0 0 25px rgba(255, 165, 0, 0.3);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  z-index: 10;
+  position: relative;
+}
+
+.hero-cta-card h2 {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+  background: linear-gradient(90deg, #FFD700, #FF8C00);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
 .hero-cta-card .glass-watch-btn {
-  padding: 1rem 3rem;
-  border-radius: 35px;
+  padding: 1rem 2.5rem;
+  border-radius: 12px;
   background: rgba(255, 255, 255, 0.15);
   border: 1px solid rgba(255, 255, 255, 0.3);
   color: #fff;
-  font-weight: 600;
   text-decoration: none;
+  font-weight: 600;
   backdrop-filter: blur(10px);
   transition: all 0.3s ease;
-  box-shadow: 0 0 25px rgba(255, 165, 0, 0.3);
-
-
-/* Responsive: Adjust for smaller screens */
-@media (max-width: 768px) {
-  .hero-cta-card {
-    height: 50vh;
-    padding-top: 4rem;
-    clip-path: path("M0,100 Q50%,0 100%,100 L100%,100% L0,100% Z");
-  }
-  .hero-cta-card h2 {
-    font-size: 1.9rem;
-    margin-top: 2rem;
-  }
-  .hero-cta-card .glass-watch-btn {
-    padding: 0.8rem 2rem;
-  }
 }
 
+.hero-cta-card .glass-watch-btn:hover {
+  background: rgba(255, 255, 255, 0.25);
+  transform: scale(1.05);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .hero-cta-card {
+    width: 90%;
+    padding: 0.5rem 2rem;
+  }
+  .hero-cta-card h2 {
+    font-size: 2rem;
+  }
+}
 
 /* === PORTFOLIO SECTION === */
 .portfolio-section {
