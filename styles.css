@@ -108,60 +108,108 @@ h1, h2 {
   }
 }
 
-/* CTA Card */
+/* === HERO CTA CARD — GLASS CURVED BACKGROUND VERSION === */
 .hero-cta-card {
-  width: 95%;
-  max-width:800px;
-  margin: 16rem auto 0;
-  padding: 2rem 3rem;
-  border-radius: 20px;
-  background: rgba(255, 255, 255, 0.12);
-  border: 1px solid rgba(255, 255, 255, 0.25);
-  backdrop-filter: blur(12px);
-  box-shadow: 0 0 25px rgba(255, 165, 0, 0.3);
+  position: relative;
+  width: 100%;
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 5rem 2rem 6rem;
+  border: none;
+  border-radius: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(15, 15, 25, 0.65) 0%,
+    rgba(0, 0, 0, 0.9) 100%
+  );
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  box-shadow: 0 -10px 40px rgba(255, 0, 80, 0.25);
+  clip-path: path("M0,60 Q50%,0 100%,60 L100%,100% L0,100% Z");
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   text-align: center;
+  overflow: hidden;
   z-index: 10;
-  position: relative;
 }
 
+/* Gradient glow line at top edge */
+.hero-cta-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(90deg, #ff004c, #ff6bd6);
+  box-shadow: 0 0 25px rgba(255, 0, 80, 0.3);
+  opacity: 0.9;
+}
+
+/* Subtle glow layer inside the curve */
+.hero-cta-card::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 70px;
+  background: radial-gradient(
+    ellipse at center,
+    rgba(255, 0, 80, 0.2) 0%,
+    transparent 80%
+  );
+  opacity: 0.7;
+}
+
+/* Headline text */
 .hero-cta-card h2 {
-  font-size: 2rem;
-  margin-bottom: 0.5rem;
+  font-size: 2.5rem;
+  margin-bottom: 1.2rem;
   background: linear-gradient(90deg, #FFD700, #FF8C00);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: 1px;
 }
 
+/* Button */
 .hero-cta-card .glass-watch-btn {
-  padding: 1rem 2.5rem;
-  border-radius: 12px;
-  background: rgba(255, 255, 255, 0.15);
-  border: 1px solid rgba(255, 255, 255, 0.3);
+  padding: 1rem 2.8rem;
+  border-radius: 30px;
+  background: linear-gradient(145deg, rgba(255,255,255,0.2), rgba(255,255,255,0.08));
+  border: 1px solid rgba(255, 255, 255, 0.25);
   color: #fff;
-  text-decoration: none;
   font-weight: 600;
+  text-decoration: none;
   backdrop-filter: blur(10px);
+  box-shadow: 0 0 20px rgba(255, 0, 80, 0.2);
   transition: all 0.3s ease;
 }
 
 .hero-cta-card .glass-watch-btn:hover {
-  background: rgba(255, 255, 255, 0.25);
+  background: linear-gradient(145deg, rgba(255,255,255,0.35), rgba(255,255,255,0.15));
   transform: scale(1.05);
+  box-shadow: 0 0 35px rgba(255, 0, 80, 0.5);
 }
 
 /* Responsive */
 @media (max-width: 768px) {
   .hero-cta-card {
-    width: 90%;
-    padding: 0.5rem 2rem;
+    padding: 3rem 1.5rem 4rem;
+    clip-path: path("M0,40 Q50%,0 100%,40 L100%,100% L0,100% Z");
   }
   .hero-cta-card h2 {
-    font-size: 2rem;
+    font-size: 1.8rem;
+  }
+  .hero-cta-card .glass-watch-btn {
+    padding: 0.8rem 2rem;
   }
 }
+
 
 /* === PORTFOLIO SECTION === */
 .portfolio-section {
