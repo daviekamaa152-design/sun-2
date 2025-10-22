@@ -185,7 +185,7 @@ h1, h2 {
 
 .portfolio-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(300px, 2fr));
   gap: 2rem;
   justify-items: center;
 }
@@ -713,7 +713,7 @@ body.desktop-view .company-name {
 }
 
 body.mobile-view .portfolio-grid {
-  grid-template-columns: 0.5fr;
+  grid-template-columns: 1fr;
 }
 
 body.tablet-view .portfolio-grid {
