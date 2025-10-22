@@ -108,49 +108,49 @@ h1, h2 {
   }
 }
 
-/* CTA Card */
-.hero-cta-card {
-  width: 95%;
-  max-width:800px;
-  margin: 16rem auto 0;
-  padding: 2rem 3rem;
-  border-radius: 20px;
-  background: rgba(255, 255, 255, 0.12);
-  border: 1px solid rgba(255, 255, 255, 0.25);
-  backdrop-filter: blur(12px);
-  box-shadow: 0 0 25px rgba(255, 165, 0, 0.3);
+/* === GLASS CURVED BAR (NEW SECTION) === */
+.glass-curve {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 180px;
+  overflow: hidden;
   display: flex;
-  flex-direction: column;
   align-items: center;
-  text-align: center;
-  z-index: 10;
-  position: relative;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  border-top: 1px solid rgba(255, 255, 255, 0.25);
+  box-shadow: 0 -6px 25px rgba(0, 0, 0, 0.1);
+  z-index: 5;
+  clip-path: path("M0,40 Q50%,0 100%,40 L100%,180 L0,180 Z");
 }
 
-.hero-cta-card h2 {
-  font-size: 2rem;
-  margin-bottom: 0.5rem;
-  background: linear-gradient(90deg, #FFD700, #FF8C00);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+.glass-curve::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(90deg, #ff004c, #ff6bd6);
+  border-radius: 50%;
+  z-index: 6;
 }
 
-.hero-cta-card .glass-watch-btn {
-  padding: 1rem 2.5rem;
-  border-radius: 12px;
-  background: rgba(255, 255, 255, 0.15);
-  border: 1px solid rgba(255, 255, 255, 0.3);
-  color: #fff;
-  text-decoration: none;
-  font-weight: 600;
-  backdrop-filter: blur(10px);
-  transition: all 0.3s ease;
+.glass-curve::after {
+  content: "";
+  position: absolute;
+  top: 2px;
+  left: 0;
+  width: 100%;
+  height: 40px;
+  background: linear-gradient(to bottom, rgba(255,255,255,0.08), transparent);
+  z-index: 4;
 }
 
-.hero-cta-card .glass-watch-btn:hover {
-  background: rgba(255, 255, 255, 0.25);
-  transform: scale(1.05);
-}
 
 /* Responsive */
 @media (max-width: 768px) {
