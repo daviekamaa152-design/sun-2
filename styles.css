@@ -110,11 +110,11 @@ h1, h2 {
 
 /* CTA Card */
 .hero-cta-card {
-  width: 15%;
+  width: 95%;
   max-width:1600px;
   margin: 16rem auto 0;
   padding: 2rem 3rem;
-  border-radius: 20px;
+  border-radius: 10px;
   background: rgba(255, 255, 255, 0.12);
   border: 1px solid rgba(255, 255, 255, 0.25);
   backdrop-filter: blur(12px);
