@@ -19,7 +19,7 @@ h1, h2 {
 /* === FIXED NAVIGATION === */
 .nav-buttons {position: fixed;
   top: 2rem;
-  right: -10rem;
+  right:-5rem;
   display: flex;
   flex-direction: column;
   gap: 15px;
@@ -91,21 +91,7 @@ h1, h2 {
   font-size: 1.5rem;
   margin-top: 0.5rem;
   color: #fff;
-}
-/* Responsive tweaks */
-@media (max-width: 600px) {
-  .hero-text {
-    top: 30%;
-  }
 
-  .company-name {
-    letter-spacing: 1px;
-  }
-
-  .tagline {
-    max-width: 90%;
-    margin: 0.5rem auto 0;
-  }
 }
 /* === FLEXIBLE CTA CARD (Adjustable Position, Height & Width) === */
 .hero-cta-card {
