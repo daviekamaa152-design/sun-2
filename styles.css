@@ -107,13 +107,22 @@ h1, h2 {
     margin: 0.5rem auto 0;
   }
 }
-
-/* CTA Card */
+/* === FLEXIBLE CTA CARD (Adjustable Position, Height & Width) === */
 .hero-cta-card {
-  width: 300%;
-  max-width:1600px;
-  margin: 16rem auto 0;
-  padding: 1rem 3rem;
+  position: absolute;           /* allows manual positioning inside the hero */
+  left: 50%;                    /* centers horizontally */
+  transform: translateX(-50%);  /* keeps it perfectly centered */
+  
+  /* === Adjustable Dimensions === */
+  width: 90%;                   /* change to any % or px (e.g., 1200px) */
+  max-width: 1600px;
+  height: auto;                 /* can also be fixed (e.g., 400px) */
+  
+  /* === Adjustable Position (distance from bottom/top) === */
+  bottom: 8%;                   /* move up or down — try 0%, 10%, etc. */
+  /* OR use top: value; instead if you want it anchored from the top */
+  
+  padding: 2.5rem 3rem;
   border-radius: 10px;
   background: rgba(255, 255, 255, 0.12);
   border: 1px solid rgba(255, 255, 255, 0.25);
@@ -124,8 +133,9 @@ h1, h2 {
   align-items: center;
   text-align: center;
   z-index: 10;
-  position: relative;
+  transition: all 0.4s ease;   /* smooth animation when adjusted */
 }
+
 
 .hero-cta-card h2 {
   font-size: 2rem;
