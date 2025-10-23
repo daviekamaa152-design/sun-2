@@ -18,8 +18,8 @@ h1, h2 {
 
 /* === FIXED NAVIGATION === */
 .nav-buttons {position: fixed;
-  top: 33rem;
-  right:30rem;
+  top: 2rem;
+  right: 2rem;
   display: flex;
   flex-direction: column;
   gap: 15px;
@@ -37,6 +37,7 @@ h1, h2 {
   font-weight: 600;
   transition: all 0.3s ease;
 }
+
 .glass-btn:hover,
 .glass-btn.active {
   background: rgba(255,255,255,0.2);
@@ -90,7 +91,21 @@ h1, h2 {
   font-size: 1.5rem;
   margin-top: 0.5rem;
   color: #fff;
+}
+/* Responsive tweaks */
+@media (max-width: 600px) {
+  .hero-text {
+    top: 30%;
+  }
 
+  .company-name {
+    letter-spacing: 1px;
+  }
+
+  .tagline {
+    max-width: 90%;
+    margin: 0.5rem auto 0;
+  }
 }
 /* === FLEXIBLE CTA CARD (Adjustable Position, Height & Width) === */
 .hero-cta-card {
