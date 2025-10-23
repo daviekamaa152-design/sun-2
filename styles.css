@@ -18,8 +18,8 @@ h1, h2 {
 
 /* === FIXED NAVIGATION === */
 .nav-buttons {position: fixed;
-  top: 2rem;
-  right: 2rem;
+  top: 33rem;
+  right:25rem;
   display: flex;
   flex-direction: column;
   gap: 15px;
@@ -36,12 +36,6 @@ h1, h2 {
   text-decoration: none;
   font-weight: 600;
   transition: all 0.3s ease;
-}
-
-.glass-btn:hover,
-.glass-btn.active {
-  background: rgba(255,255,255,0.2);
-  color: #FFD700;
 }
 
 /* === HERO SECTION === */
@@ -91,99 +85,7 @@ h1, h2 {
   font-size: 1.5rem;
   margin-top: 0.5rem;
   color: #fff;
-}
-/* Responsive tweaks */
-@media (max-width: 600px) {
-  .hero-text {
-    top: 30%;
-  }
 
-  .company-name {
-    letter-spacing: 1px;
-  }
-
-  .tagline {
-    max-width: 90%;
-    margin: 0.5rem auto 0;
-  }
-}
-
-/* Basic reset and background to see the glass effect better */
-body {
-    margin: 0;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    /* A beautiful background to contrast with the glass card */
-    background: linear-gradient(135deg, #1e003a, #00103a); 
-    font-family: sans-serif;
-    color: white; /* Default text color */
-}
-
-/* --- The Glass Card Styling --- */
-.glass-card {
-    /* Sizing and Layout */
-    width: 600px;
-    padding: 30px 40px;
-    border-radius: 20px;
-    text-align: center;
-    
-    /* 1. Glassmorphism Effect */
-    background: rgba(255, 255, 255, 0.1); /* Semi-transparent white background */
-    border: 1px solid rgba(255, 255, 255, 0.3); /* Light, subtle border */
-    backdrop-filter: blur(10px); /* The key to the glass effect */
-    -webkit-backdrop-filter: blur(10px); /* For Safari support */
-    
-    /* 2. Sunset Gradient Glow (Box Shadow) */
-    /* This creates the glow effect around the card */
-    box-shadow: 
-        0 4px 30px rgba(0, 0, 0, 0.1), /* Standard shadow */
-        /* The Glow Layers (Sunset Colors) */
-        0 0 40px rgba(255, 120, 0, 0.7), /* Orange/Red Glow */
-        0 0 80px rgba(255, 0, 150, 0.5); /* Pink/Magenta Glow */
-    
-    transition: transform 0.3s, box-shadow 0.3s;
-}
-
-/* Simple hover effect to make it interactive */
-.glass-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 
-        0 6px 35px rgba(0, 0, 0, 0.15),
-        /* A slightly brighter glow on hover */
-        0 0 50px rgba(255, 120, 0, 0.9),
-        0 0 100px rgba(255, 0, 150, 0.7);
-}
-
-
-/* --- Navigation Styling --- */
-.navigation {
-    margin-top: 30px;
-    display: flex; /* Arranges links in a row */
-    justify-content: space-around; /* Spreads them evenly */
-}
-
-.nav-link {
-    color: #fff; /* White link text */
-    text-decoration: none; /* Remove underline */
-    padding: 10px 15px;
-    border-radius: 15px;
-    font-weight: bold;
-    letter-spacing: 0.5px;
-    
-    /* Subtle background and shadow for the links inside the card */
-    background: rgba(255, 255, 255, 0.05); 
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    
-    transition: background 0.2s, transform 0.2s;
-}
-
-.nav-link:hover {
-    /* Make the link itself stand out a bit more on hover */
-    background: rgba(255, 255, 255, 0.2); 
-    transform: translateY(-2px);
-    color: #ffd1d1; /* Slight color change on hover */
 }
 /* === FLEXIBLE CTA CARD (Adjustable Position, Height & Width) === */
 .hero-cta-card {
