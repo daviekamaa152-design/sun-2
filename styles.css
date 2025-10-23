@@ -19,7 +19,7 @@ h1, h2 {
 /* === FIXED NAVIGATION === */
 .nav-buttons {position: fixed;
   top: 33rem;
-  right:25rem;
+  right:30rem;
   display: flex;
   flex-direction: column;
   gap: 15px;
@@ -36,6 +36,11 @@ h1, h2 {
   text-decoration: none;
   font-weight: 600;
   transition: all 0.3s ease;
+}
+.glass-btn:hover,
+.glass-btn.active {
+  background: rgba(255,255,255,0.2);
+  color: #FFD700;
 }
 
 /* === HERO SECTION === */
