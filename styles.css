@@ -116,10 +116,10 @@ h1, h2 {
   /* === Adjustable Dimensions === */
   width: 90%;                   /* change to any % or px (e.g., 1200px) */
   max-width: 1600px;
-  height: 400;                 /* can also be fixed (e.g., 400px) */
+  height: 100;                 /* can also be fixed (e.g., 400px) */
   
   /* === Adjustable Position (distance from bottom/top) === */
-  bottom: 8%;                   /* move up or down — try 0%, 10%, etc. */
+  bottom: 15%;                   /* move up or down — try 0%, 10%, etc. */
   /* OR use top: value; instead if you want it anchored from the top */
   
   padding: 2.5rem 3rem;
