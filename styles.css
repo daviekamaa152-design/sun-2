@@ -119,7 +119,7 @@ h1, h2 {
   height: 100;                 /* can also be fixed (e.g., 400px) */
   
   /* === Adjustable Position (distance from bottom/top) === */
-  bottom: 15%;                   /* move up or down — try 0%, 10%, etc. */
+  bottom: 18%;                   /* move up or down — try 0%, 10%, etc. */
   /* OR use top: value; instead if you want it anchored from the top */
   
   padding: 2.5rem 3rem;
@@ -146,7 +146,7 @@ h1, h2 {
 }
 
 .hero-cta-card .glass-watch-btn {
-  padding: 1rem 2.5rem;
+  padding: 0.5rem 1.5rem;
   border-radius: 12px;
   background: rgba(255, 255, 255, 0.15);
   border: 1px solid rgba(255, 255, 255, 0.3);
