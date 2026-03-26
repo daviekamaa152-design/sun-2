@@ -4,6 +4,8 @@ document.addEventListener("DOMContentLoaded", () => {
   const closePopup = document.getElementById("closeBooking");
   const tabBtns = document.querySelectorAll(".tab-btn");
   const tabContents = document.querySelectorAll(".tab-content");
+  const bookingForm = document.getElementById("bookingForm");
+  const confirmation = document.getElementById("bookingConfirmation");
 
   // --- SHOW POPUP ---
   bookBtn.addEventListener("click", (e) => {
@@ -39,9 +41,53 @@ document.addEventListener("DOMContentLoaded", () => {
       closePopup.click();
     }
   });
-
   bookingPopup.addEventListener("click", (e) => {
     if (e.target === bookingPopup) closePopup.click();
+  });
+
+  // --- FORM SUBMISSION WITH WHATSAPP API ---
+  bookingForm.addEventListener("submit", async (e) => {
+    e.preventDefault();
+
+    const productionType =
+      bookingForm.productionTypeCustom.value || bookingForm.productionTypeDropdown.value;
+    const budget = bookingForm.budget.value;
+    const startDate = bookingForm.startDate.value;
+    const endDate = bookingForm.endDate.value;
+    const deliverables = bookingForm.deliverables.value;
+    const phone = bookingForm.phone.value;
+
+    const bookingData = { productionType, budget, startDate, endDate, deliverables, phone };
+
+    try {
+      const response = await fetch("/booking", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(bookingData),
+      });
+
+      const result = await response.json();
+
+      if (result.success) {
+        confirmation.style.display = "block";
+        bookingForm.reset();
+        setTimeout(() => {
+          confirmation.style.display = "none";
+          closePopup.click();
+        }, 3000);
+      } else {
+        confirmation.innerHTML =
+          "<h2>Oops!</h2><p>Something went wrong. Please try again.</p>";
+        confirmation.style.display = "block";
+        setTimeout(() => (confirmation.style.display = "none"), 3000);
+      }
+    } catch (err) {
+      console.error(err);
+      confirmation.innerHTML =
+        "<h2>Error!</h2><p>Server error. Please try again later.</p>";
+      confirmation.style.display = "block";
+      setTimeout(() => (confirmation.style.display = "none"), 3000);
+    }
   });
 });
 // === PORTFOLIO VIDEO POPUP ===
