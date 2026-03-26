@@ -324,73 +324,81 @@ function playVideo(url) {
 </div>
 
 
-  <!-- POPUP BOOKING FORM -->
-  <div id="bookingPopup" class="booking-popup">
-    <div class="booking-card">
-      <span id="closeBooking" class="close-btn">&times;</span>
-      <header>
-        <h1>Book With Us</h1>
-        <p>Plan your perfect production with Sunperky Films</p>
-      </header>
+ <!-- BOOKING POPUP -->
+<div id="bookingPopup" class="booking-popup">
+  <div class="booking-card">
+    <span id="closeBooking" class="close-btn">&times;</span>
+    <header>
+      <h1>Book With Us</h1>
+      <p>Plan your perfect production with Sunperky Films</p>
+    </header>
 
-      <div class="tabs">
-        <button class="tab-btn active" data-tab="type">Production Type</button>
-        <button class="tab-btn" data-tab="budget">Estimate Budget</button>
-        <button class="tab-btn" data-tab="timeline">Production Timeline</button>
-        <button class="tab-btn" data-tab="deliverables">Expected Deliverables</button>
-        <button class="tab-btn" data-tab="contact">Phone Number</button>
+    <!-- Tabs -->
+    <div class="tabs">
+      <button class="tab-btn active" data-tab="type">Production Type</button>
+      <button class="tab-btn" data-tab="budget">Estimate Budget</button>
+      <button class="tab-btn" data-tab="timeline">Production Timeline</button>
+      <button class="tab-btn" data-tab="deliverables">Expected Deliverables</button>
+      <button class="tab-btn" data-tab="contact">Phone Number</button>
+    </div>
+
+    <!-- Form -->
+    <form id="bookingForm">
+      <div class="tab-content active" id="type">
+        <h2>Choose Your Production Type</h2>
+        <select name="productionTypeDropdown">
+          <option value="">Select Production Type</option>
+          <option value="Commercial">Commercial</option>
+          <option value="Music Video">Music Video</option>
+          <option value="Short Film">Short Film</option>
+          <option value="Documentary">Documentary</option>
+          <option value="Event Coverage">Event Coverage</option>
+        </select>
+        <p>Or type your own:</p>
+        <input type="text" name="productionTypeCustom" placeholder="Enter your production type here" />
       </div>
 
-      <form id="bookingForm">
-        <div class="tab-content active" id="type">
-          <h2>Choose Your Production Type</h2>
-          <select name="productionTypeDropdown">
-            <option value="">Select Production Type</option>
-            <option value="Commercial">Commercial</option>
-            <option value="Music Video">Music Video</option>
-            <option value="Short Film">Short Film</option>
-            <option value="Documentary">Documentary</option>
-            <option value="Event Coverage">Event Coverage</option>
-          </select>
-          <p>Or type your own:</p>
-          <input type="text" name="productionTypeCustom" placeholder="Enter your production type here" />
-        </div>
+      <div class="tab-content" id="budget">
+        <h2>Estimate Your Budget</h2>
+        <select name="budget" required>
+          <option value="">Select Budget Range</option>
+          <option value="<50000">Below KES 50,000</option>
+          <option value="50000-150000">KES 50,000 - 150,000</option>
+          <option value="150000-300000">KES 150,000 - 300,000</option>
+          <option value=">300000">Above KES 300,000</option>
+        </select>
+      </div>
 
-        <div class="tab-content" id="budget">
-          <h2>Estimate Your Budget</h2>
-          <select name="budget" required>
-            <option value="">Select Budget Range</option>
-            <option value="<50000">Below KES 50,000</option>
-            <option value="50000-150000">KES 50,000 - 150,000</option>
-            <option value="150000-300000">KES 150,000 - 300,000</option>
-            <option value=">300000">Above KES 300,000</option>
-          </select>
-        </div>
+      <div class="tab-content" id="timeline">
+        <h2>Production Timeline</h2>
+        <label>Start Date:</label>
+        <input type="date" name="startDate" required />
+        <label>End Date:</label>
+        <input type="date" name="endDate" required />
+      </div>
 
-        <div class="tab-content" id="timeline">
-          <h2>Production Timeline</h2>
-          <label>Start Date:</label>
-          <input type="date" name="startDate" required />
-          <label>End Date:</label>
-          <input type="date" name="endDate" required />
-        </div>
+      <div class="tab-content" id="deliverables">
+        <h2>Expected Deliverables</h2>
+        <textarea name="deliverables" placeholder="Describe what you expect to receive" rows="5"></textarea>
+      </div>
 
-        <div class="tab-content" id="deliverables">
-          <h2>Expected Deliverables</h2>
-          <textarea name="deliverables" placeholder="Describe what you expect to receive" rows="5"></textarea>
-        </div>
+      <div class="tab-content" id="contact">
+        <h2>Contact Information</h2>
+        <input type="tel" name="phone" placeholder="Enter your phone number" required />
+      </div>
 
-        <div class="tab-content" id="contact">
-          <h2>Contact Information</h2>
-          <input type="tel" name="phone" placeholder="Enter your phone number" required />
-        </div>
+      <div class="submit-container">
+        <button type="submit" class="submit-btn">Submit Booking Request</button>
+      </div>
+    </form>
 
-        <div class="submit-container">
-          <button type="submit" class="submit-btn">Submit Booking Request</button>
-        </div>
-      </form>
+    <!-- Confirmation Message -->
+    <div id="bookingConfirmation" class="booking-confirmation">
+      <h2>Booking Received!</h2>
+      <p>Your booking has been received. David (0759xxxxxx) will contact you immediately.</p>
     </div>
   </div>
+</div>
 
   <footer class="footer">
   <div class="container">
