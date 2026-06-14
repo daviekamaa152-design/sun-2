@@ -1614,12 +1614,7 @@
         if (id) document.getElementById(id).classList.add('visible');
     }
 
-    function normalizePhone(raw) {
-        var p = raw.replace(/[\s\-\+]/g, '');
-        if (p.startsWith('254') && p.length === 12) p = '0' + p.slice(3);
-        if (p.startsWith('0') && p.length === 10) p = p.slice(1);
-        return p;
-    }
+    function normalizePhone(raw) { return raw.replace(/[\s\-]/g, ''); }
 
     async function trackOrder() {
         const raw = document.getElementById('trackPhoneInput').value.trim();
@@ -1703,8 +1698,8 @@
     //  SHOWCASE
     // ─────────────────────────────────────────────────────────────
     const SHOWCASE_PRODUCTS = [
-        { name: 'Dandelion Leaves', price: 'KES 950',  img: 'Product1.png' },
-        { name: 'Wild berries leaves tea', price: 'KES 1200',  img: 'product2.jpg' },
+        { name: 'Product 1', price: 'KES 19',  img: 'Product1.png' },
+        { name: 'Product 2', price: 'KES 25',  img: 'product2.jpg' },
         { name: 'Product 3', price: 'KES 15',  img: 'product3.jpg' },
         { name: 'Product 4', price: 'KES 32',  img: 'product4.jpg' },
         { name: 'Product 5', price: 'KES 28',  img: 'product5.jpg' },
