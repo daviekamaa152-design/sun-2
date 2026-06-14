@@ -14,6 +14,90 @@
             color: white;
         }
 
+        /* PASSWORD GATE */
+        #passwordGate {
+            position: fixed;
+            inset: 0;
+            background: #021009;
+            z-index: 99999;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            gap: 24px;
+        }
+
+        #passwordGate.hidden { display: none; }
+
+        #passwordGate .gate-logo {
+            width: 56px;
+            height: 56px;
+            border-radius: 10px;
+            object-fit: cover;
+            margin-bottom: 4px;
+        }
+
+        #passwordGate h2 {
+            font-family: "Playfair Display", serif;
+            font-size: 28px;
+            font-weight: 400;
+            color: white;
+            margin: 0;
+        }
+
+        #passwordGate p {
+            font-size: 14px;
+            color: rgba(255,255,255,0.45);
+            margin: 0;
+        }
+
+        #passwordGate .gate-box {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 12px;
+            width: 100%;
+            max-width: 320px;
+            padding: 0 20px;
+        }
+
+        #passwordGate input {
+            width: 100%;
+            padding: 12px 16px;
+            border-radius: 10px;
+            border: 1px solid rgba(255,255,255,0.15);
+            background: rgba(255,255,255,0.05);
+            color: white;
+            font-size: 15px;
+            font-family: "Nunito", sans-serif;
+            outline: none;
+            text-align: center;
+            letter-spacing: 3px;
+        }
+
+        #passwordGate input:focus { border-color: #1a7a3c; }
+
+        #passwordGate button {
+            width: 100%;
+            padding: 12px;
+            background: #1a7a3c;
+            color: white;
+            border: none;
+            border-radius: 10px;
+            font-size: 14px;
+            font-family: "Nunito", sans-serif;
+            font-weight: 600;
+            cursor: pointer;
+        }
+
+        #passwordGate button:hover { background: #22a34e; }
+
+        #gateError {
+            font-size: 13px;
+            color: #f87171;
+            display: none;
+        }
+
         /* HEADER */
         .header {
             display: flex;
@@ -1092,6 +1176,18 @@
 
 <body>
 
+    <!-- PASSWORD GATE — blocks entire page until correct password entered -->
+    <div id="passwordGate">
+        <h2>RNb Store</h2>
+        <p>Enter the password to continue</p>
+        <div class="gate-box">
+            <input type="password" id="gateInput" placeholder="••••••••" onkeydown="if(event.key==='Enter') checkPassword()" autofocus />
+            <span id="gateError">Incorrect password. Try again.</span>
+            <button onclick="checkPassword()">Enter Store</button>
+        </div>
+    </div>
+
+
     <!-- HEADER -->
     <header class="header">
         <div class="brand">
@@ -1828,6 +1924,29 @@
             document.getElementById('payBtn').disabled = false;
             renderSlots(); goToStep(1);
         }, 400);
+    }
+
+    // ─────────────────────────────────────────────────────────────
+    //  PASSWORD GATE
+    //  ↓ Change "rnbstore2025" below to your own secret password
+    // ─────────────────────────────────────────────────────────────
+    const SITE_PASSWORD = "rnbstore2025";
+
+    function checkPassword() {
+        const input = document.getElementById('gateInput').value;
+        if (input === SITE_PASSWORD) {
+            document.getElementById('passwordGate').classList.add('hidden');
+            sessionStorage.setItem('rnb_auth', '1');
+        } else {
+            document.getElementById('gateError').style.display = 'block';
+            document.getElementById('gateInput').value = '';
+            document.getElementById('gateInput').focus();
+        }
+    }
+
+    // Skip gate if already authenticated this session
+    if (sessionStorage.getItem('rnb_auth') === '1') {
+        document.getElementById('passwordGate').classList.add('hidden');
     }
 
     renderSlots();
