@@ -1707,7 +1707,6 @@
         { name: 'Product 7', price: 'KES 18',  img: 'product7.jpg' },
         { name: 'Product 8', price: 'KES 35',  img: 'product8.jpg' },
         { name: 'Product 9', price: 'KES 21',  img: 'product9.jpg' },
-        { name: 'Product 10', price: 'KES 21',  img: 'product9.jpg' },
     ];
 
     function buildShowcase() {
